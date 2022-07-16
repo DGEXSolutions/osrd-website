@@ -29,8 +29,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install      
+      - name: Install
         run: npm install
+
+      - name: Install docsy dependencies
+        run: cd themes/docsy && npm install
 
       - name: Build
         run: npm run build
